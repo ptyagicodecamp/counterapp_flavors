@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "887812704655",
+    "firebase_url": "https://counterapp-prod-default-rtdb.firebaseio.com",
+    "project_id": "counterapp-prod",
+    "storage_bucket": "counterapp-prod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:887812704655:android:5538f06418f9ee908ee3fa",
+        "android_client_info": {
+          "package_name": "com.pcc.counterapp.prod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "887812704655-jr8029cbbe28734srsct6ec95781p3rq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfZIKuitZ9Y9IW_aa1HtCbpWpo9O5asJ0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "887812704655-jr8029cbbe28734srsct6ec95781p3rq.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "887812704655-ql1ulpc6hp7rosvcj3s8v4qm2qr8148m.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pcc.counterapp.prod"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

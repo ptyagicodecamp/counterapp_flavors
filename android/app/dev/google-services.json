@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "788441950413",
+    "firebase_url": "https://counterapp-dev-default-rtdb.firebaseio.com",
+    "project_id": "counterapp-dev",
+    "storage_bucket": "counterapp-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:788441950413:android:c5b9d6f8bcbc665cd72184",
+        "android_client_info": {
+          "package_name": "com.pcc.counterapp.dev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "788441950413-pg6kht019q00m87i8vn40t9d9nmip4rn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuM3FGZ_O9oMre12Adx0b-1pO8wD673kM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "788441950413-pg6kht019q00m87i8vn40t9d9nmip4rn.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "788441950413-2ft2ot2gmb3jd6ifq65nracl2v2dh9a0.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.pcc.counterapp.dev"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
