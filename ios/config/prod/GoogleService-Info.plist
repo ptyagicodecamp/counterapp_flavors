@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>887812704655-ql1ulpc6hp7rosvcj3s8v4qm2qr8148m.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.887812704655-ql1ulpc6hp7rosvcj3s8v4qm2qr8148m</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAboV0uE0igsaFLmx0ri3n7gAFKHfNCP2o</string>
+	<key>GCM_SENDER_ID</key>
+	<string>887812704655</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.pcc.counterapp.prod</string>
+	<key>PROJECT_ID</key>
+	<string>counterapp-prod</string>
+	<key>STORAGE_BUCKET</key>
+	<string>counterapp-prod.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:887812704655:ios:15acd011fd150f268ee3fa</string>
+	<key>DATABASE_URL</key>
+	<string>https://counterapp-prod-default-rtdb.firebaseio.com</string>
+</dict>
+</plist>
