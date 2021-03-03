@@ -17,13 +17,13 @@ class MyApp extends StatelessWidget {
   Widget _flavorBanner(Widget child) {
     return Banner(
       child: child,
-      location: BannerLocation.topStart,
+      location: BannerLocation.topEnd,
       message: appConfig.flavor,
       color: appConfig.flavor == 'dev'
-          ? Colors.yellow.withOpacity(0.6)
-          : Colors.red.withOpacity(0.6),
+          ? Colors.red.withOpacity(0.6)
+          : Colors.green.withOpacity(0.6),
       textStyle: TextStyle(
-          fontWeight: FontWeight.w700, fontSize: 12.0, letterSpacing: 1.0),
+          fontWeight: FontWeight.w700, fontSize: 14.0, letterSpacing: 1.0),
       textDirection: TextDirection.ltr,
     );
   }
@@ -32,6 +32,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     MaterialApp materialApp = MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -49,9 +50,11 @@ class MyApp extends StatelessWidget {
         // closer together (more dense) than on mobile platforms.
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: _flavorBanner(
+        MyHomePage(title: 'Flutter Demo Home Page'),
+      ),
     );
-    return _flavorBanner(materialApp);
+    return materialApp;
   }
 }
 
@@ -115,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
             Text(
               _error == null ? '$_counter' : 'Error: \n${_error.message}',
-              style: Theme.of(context).textTheme.display1,
+              style: Theme.of(context).textTheme.bodyText1,
             ),
           ],
         ),
