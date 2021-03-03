@@ -40,7 +40,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-        applicationId "com.pcc.counterapp_flavors"
+        applicationId "com.pcc.counterapp"
         minSdkVersion 16
         targetSdkVersion 29
         versionCode flutterVersionCode.toInteger()
@@ -66,13 +66,15 @@ android {
     productFlavors {
         dev {
             dimension "counterapp"
+            applicationIdSuffix ".dev"
             resValue "string", "app_name", "Counter App Dev"
-            versionNameSuffix "-dev"
+            versionNameSuffix ".dev"
         }
         prod {
             dimension "counterapp"
+            applicationIdSuffix ".prod"
             resValue "string", "app_name", "Counter App Prod"
-            versionNameSuffix "-prod"
+            versionNameSuffix ".prod"
         }
     }
 }

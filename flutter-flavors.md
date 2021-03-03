@@ -27,8 +27,84 @@ In this article, I will use default `CounterApp` in two variants or flavors: `de
 
 
 --
+# Android
 
-# HEADLINE
+# Firebase Configuration Files
+Firebase configuration files go under in their flavor folders under `android/app/src/`.
+* dev flavor: `android/app/src/dev/google-services.json`
+* prod flavor: `android/app/src/prod/google-services.json`
+
+# Flavors
+
+Define flavors in `app/build.gradle`.
+
+```
+android {
+
+
+    defaultConfig {
+        applicationId "com.pcc.counterapp"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
+    }
+
+    ...
+
+    flavorDimensions "counterapp"
+
+    productFlavors {
+        dev {
+            dimension "counterapp"
+            applicationIdSuffix ".dev"
+            resValue "string", "app_name", "Counter App Dev"
+            versionNameSuffix ".dev"
+        }
+        prod {
+            dimension "counterapp"
+            applicationIdSuffix ".prod"
+            resValue "string", "app_name", "Counter App Prod"
+            versionNameSuffix ".prod"
+        }
+    }
+}
+```
+
+---
+ # iOS
+
+ We need to setup custom schemes at iOS side.
+
+ # Firebase Configuration Files
+
+
+ # Custom Schemes
+
+[TODO: Add recording of creating dev scheme]
+
+At this point, if you run `flutter run --flavor dev` in CLI, you will see information to complete the custom scheme.
+```
+The Xcode project defines build configurations: Debug, Release, Profile
+Flutter expects a build configuration named Debug-dev or similar.
+Open Xcode to fix the problem:
+  open ios/Runner.xcworkspace
+1. Click on "Runner" in the project navigator.
+2. Ensure the Runner PROJECT is selected, not the Runner TARGET.
+3. Click the Editor->Add Configuration->Duplicate "Debug" Configuration.
+
+   If this option is disabled, it is likely you have the target selected instead
+   of the project; see:
+   https://stackoverflow.com/questions/19842746/adding-a-build-configuration-in-xcode
+
+   If you have created a completely custom set of build configurations,
+   you can set the FLUTTER_BUILD_MODE=debug
+   in the .xcconfig file for that configuration and run from Xcode.
+
+4. If you are not using completely custom build configurations, name the newly created configuration debug.
+Could not build the precompiled application for the device.
+```
+
 
 
 
