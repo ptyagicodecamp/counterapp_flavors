@@ -1,19 +1,37 @@
 import 'dart:async';
 
+import 'package:counterapp_flavors/app_config.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
 
-void main() {
+Future<Widget> initializeApp(AppConfig appConfig) async {
   WidgetsFlutterBinding.ensureInitialized();
   FirebaseDatabase.instance.setPersistenceEnabled(true);
-  runApp(MyApp());
+  return MyApp(appConfig);
 }
 
 class MyApp extends StatelessWidget {
+  final AppConfig appConfig;
+  const MyApp(this.appConfig);
+
+  Widget _flavorBanner(Widget child) {
+    return Banner(
+      child: child,
+      location: BannerLocation.topStart,
+      message: appConfig.flavor,
+      color: appConfig.flavor == 'dev'
+          ? Colors.yellow.withOpacity(0.6)
+          : Colors.red.withOpacity(0.6),
+      textStyle: TextStyle(
+          fontWeight: FontWeight.w700, fontSize: 12.0, letterSpacing: 1.0),
+      textDirection: TextDirection.ltr,
+    );
+  }
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    MaterialApp materialApp = MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -25,7 +43,7 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: appConfig.flavor == 'dev' ? Colors.yellow : Colors.blue,
         // This makes the visual density adapt to the platform that you run
         // the app on. For desktop platforms, the controls will be smaller and
         // closer together (more dense) than on mobile platforms.
@@ -33,6 +51,7 @@ class MyApp extends StatelessWidget {
       ),
       home: MyHomePage(title: 'Flutter Demo Home Page'),
     );
+    return _flavorBanner(materialApp);
   }
 }
 
