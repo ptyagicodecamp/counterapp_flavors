@@ -10,7 +10,7 @@ void main() async {
 }
 
 /*
-flutter run —release -t lib/main_prod.dart  --flavor=prod
+flutter run -t lib/main_prod.dart  --release --flavor=prod
 flutter build appbundle -t lib/main_prod.dart  --flavor=prod
 flutter build apk -t lib/main_prod.dart  --flavor=prod
 */
