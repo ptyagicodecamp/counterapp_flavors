@@ -142,6 +142,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Future<void> _increment() async {
+    FirebaseCrashlytics.instance.crash();
     // Increment counter in transaction.
     await _counterRef.runTransaction((MutableData mutableData) async {
       mutableData.value = (mutableData.value ?? 0) + 1;

@@ -64,9 +64,13 @@ apply plugin: 'com.google.firebase.crashlytics'
 ## iOS
 
 1. Open Xcode
-2. Select 'Runner' under 'Targets' and open 'Build Phases' tab.
-3. Click on '+' and Choose 'New Run Script Phase'. Add `${PODS_ROOT}/FirebaseCrashlytics/run` in the script box.
-4. Add `$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)` in 'Input Files' to provide `Info.plist` location.
+2. Targets-> Runner-> Build Settings -> Debug Information Format -> DWARF with dSYM File.
+3. Select 'Runner' under 'Targets' and open 'Build Phases' tab.
+4. Click on '+' and Choose 'New Run Script Phase'. Add `${PODS_ROOT}/FirebaseCrashlytics/run` in the script box.
+5. Add `${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${TARGET_NAME}` in 'Input Files' to provide dSYMs files location. 
+6. Add `$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)` in 'Input Files' to provide `Info.plist` location.
+7. Add one more script by clicking on '+' and choosing 'New Run Script Phase' to upload dSYMs files.
+8. Type this in the script box: `${PODS_ROOT}/FirebaseCrashlytics/upload-symbols -gsp ${PROJECT_DIR}/Your_path/GoogleService-Info.plist -p ios ${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}`
 
 ---
 
