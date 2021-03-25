@@ -8,10 +8,10 @@ void main() async {
   runApp(app);
 }
 /*
-flutter run -t lib/main_dev.dart  --flavor=dev
+flutter run -t lib/main.dart  --flavor=dev
 # Debug signing configuration + dev flavor
-flutter run -t lib/main_dev.dart  --debug --flavor=dev
-flutter run -t lib/main_dev.dart  --release --flavor=dev
-flutter build appbundle -t lib/main_dev.dart  --flavor=dev
-flutter build apk -t lib/main_dev.dart  --flavor=dev
+flutter run -t lib/main.dart  --debug --flavor=dev
+flutter run -t lib/main.dart  --release --flavor=dev
+flutter build appbundle -t lib/main.dart  --flavor=dev
+flutter build apk -t lib/main.dart  --flavor=dev
 */

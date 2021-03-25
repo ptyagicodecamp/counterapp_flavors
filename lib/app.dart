@@ -1,12 +1,22 @@
 import 'dart:async';
 
 import 'package:counterapp_flavors/app_config.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_crashlytics/firebase_crashlytics.dart';
+import 'package:flutter/foundation.dart' show kDebugMode;
 
 Future<Widget> initializeApp(AppConfig appConfig) async {
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   FirebaseDatabase.instance.setPersistenceEnabled(true);
+  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
+  if (kDebugMode) {
+    await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(true);
+  }
+  FirebaseCrashlytics.instance.setUserIdentifier("counterappDevUser12345");
+  //FirebaseCrashlytics.instance.crash();
   return MyApp(appConfig);
 }
 
